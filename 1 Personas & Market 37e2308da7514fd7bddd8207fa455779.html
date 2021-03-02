@@ -1,0 +1,639 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1 Personas &amp; Market</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8562aed4-d089-44bc-81b1-7e04b61caf13" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🛃</span></div><h1 class="page-title">1 Personas &amp; Market</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="961d657d-930e-4127-a1f4-5458b12a109e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">TLDR; 
+There are two main personas/markets that we serve- &quot;Amit the Data Science leader&quot; and &quot;Callum the Operations/Product Leader&quot;</div></figure><nav id="c34f72a8-f27e-4472-b309-592ad3b9286e" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#481d4952-1ed3-4a20-b02c-0ec8545361b9">Personas Summary</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a0d68bc9-5d17-4fe1-9d1b-473a2cc3ed25">Persona 1 - “Amit the Data Science Leader”</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5be058b2-0d7c-4b1b-a307-8c70fb92af0c">Market Size</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3214f83d-fa38-43e5-a3c1-d5879daa244e"><strong>What problem are we solving for him?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a2ca498e-5909-46b4-abcd-18fd8865d58b"><strong>What benefits are we bringing him?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fccaf75e-2ac0-428c-a57a-7db02f797eb0"><strong>What delights him?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f5fdbdf4-931f-4f52-bb69-3a9d90506253">Details</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c864f8b3-391f-41ab-b7b6-2b0b49905af3">Persona 2 - “Callum the Operations/Product Leader”</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6086bb03-8264-4f60-8334-da87204c1dcd">Market Size </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7c86ccb1-a453-4b9f-a576-268cd6cb7fab"><strong>What problem are we solving for him?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e788f3e6-28c6-4c0f-938a-33f49cf68120"><strong>What benefits are we bringing him?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ef3d1898-16fd-4c11-ac3d-326f13c80f9d"><strong>What delights him?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9939156d-5260-43b7-97ef-3bc796efcda3">Details</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9f3c01c4-c923-464e-9fd1-ef5c79ac5195">Nuances of the Markets</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3db82a08-2c67-468d-92a4-3b711bd5884c">Self Service Tools vs Outsourced Labeling Markets</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#12b859e1-e44c-4e52-9e78-41d1dfa4b158">Uses of AI for these Markets </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f42249ba-abc3-4d16-983f-fb9ad3fc120b">A Time Bound Market Difference</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f4ff0545-0402-445b-b889-266c646c3b34">Comparison to Data Robot like Solutions</a></div></nav><h1 id="481d4952-1ed3-4a20-b02c-0ec8545361b9" class="">Personas Summary</h1><figure id="37e2308d-a751-4fd7-bddd-8207fa455779" class="image"><a href="1%20Personas%20&amp;%20Market%2037e2308da7514fd7bddd8207fa455779/Untitled.png"><img style="width:1504px" src="1%20Personas%20&amp;%20Market%2037e2308da7514fd7bddd8207fa455779/Untitled.png"/></a></figure><h1 id="a0d68bc9-5d17-4fe1-9d1b-473a2cc3ed25" class="">Persona 1 - “Amit the Data Science Leader”</h1><p id="803c5866-886a-4095-9176-a96f20692ee8" class="">There are 3 sub-types of Amit&#x27;s, all unified under a single core value proposition: </p><ol id="eb36cfe9-591f-4bfc-80c6-acf69a51e64b" class="numbered-list" start="1"><li><strong>Outsourced Labeling as a Service</strong> - This can be a ML startup, a data science team within big company, a large company whose product exists because of machine learning (self-driving car, chat bot, voice assistants, etc.). They are scaling fast, but can&#x27;t move fast enough. They have too much data to handle internally and so they want to outsource the data. Speed is more important than saving money right now. </li></ol><ol id="4246c165-a0c4-4d07-94ba-ddc0c254b933" class="numbered-list" start="2"><li><strong>Self-Service Labeling Tool</strong> - This can be a startup using machine learning, data science team within large company, etc. But in this case they have an exiting labeling team. For some reason they have chosen to label data internally, maybe they have sensitive data, private data, data that needs domain experts. They have a large group of people involved in labeling and need a centralized system. AI is a key helper for their business but maybe not core like as is the case with self-driving cars. The team is tasked with finding a solution to label data internally and is struggling with the build vs buy decision.</li></ol><ol id="994afe68-1e2b-496a-84a3-3cfff5a39d4f" class="numbered-list" start="3"><li><strong>Hybrid Solution</strong> - This is a large tech company with a mature data science team. They have the money, time, and resources. Their goal is to be an AI first company and as such AI is core to the business strategy.. They are so profitable they can &quot;waste money&quot; on building internal infrastructure (what is $10M to these guys?).  They can build it themselves, but money is also such a commodity if they could use something externally, that also makes sense. They prefer to build and customize solutions themselves then outsource to scale the labeling. </li></ol><p id="c0cc0ac6-eede-452d-b5b6-00e50582d4c3" class="">
+</p><p id="0457bab4-4c7a-4174-82b9-9def16cb7750" class="">Amit is actually quite good at Machine Learning, even though he doesn&#x27;t code anymore he is up-to-date on the latest activity. </p><p id="84c63057-f6d2-48df-8d2c-a9127afa7659" class="">He doesn&#x27;t need a lot of education or help with Machine Learning, but <strong>doesn&#x27;t know a lot about getting high quality data</strong>.  Given enough time he could likely build his own labeling solution but it doesn&#x27;t really make sense for him, since he realized he should focus on his core value add. He thinks outsource labeling solutions are &quot;dumb&quot; labor. He wants to focus on building his own models and doesn&#x27;t want to outsource the core design of the task. He has an internal labeling team he uses to iterate quickly, optimizes instructions, tasks design, etc. And when he&#x27;s confident, he wants to outsource the task to a crowd to scale the labeling. </p><p id="954216ff-89ed-4bac-b103-a5affcbcfe6d" class="">He values transparency and control in solutions, and wants to be able to build and adjust things quickly himself and not wait for his vendor to change it. </p><p id="ad1dea78-74d8-43b6-8f63-816ee9e7410e" class="">He spends a lot of time checking metrics, and preparing presentations for the rest of the company. He helps the team in debugging the ML pipelines, and coming up with ideas on how to improve it. He spends time educating the executives of the power and benefit of Machine Learning. He really really wants to move fast and make progress!</p><h3 id="5be058b2-0d7c-4b1b-a307-8c70fb92af0c" class="">Market Size</h3><p id="9e1f6021-0d1b-4ec9-8d4f-a80919ecbc11" class="">Of our two target customer profiles, Amit reflects a venture-sized market opportunity (though much smaller than Customer Profile #2 below): super.AI&#x27;s market opportunity for Amit buyers today is $15B growing at a CAGR of 43%. This is composed of </p><ul id="90ea7b6a-bf7f-4eb0-87eb-4ae10c8e8a49" class="bulleted-list"><li>Computer Vision - $4.5B in @ a CAGR of 42%</li></ul><ul id="623d4a10-ee97-4d87-9000-a42a014d5a09" class="bulleted-list"><li>Autonomous Vehicles - $5.5B in @ a CAGR of 50%</li></ul><ul id="736bb4ff-d060-4141-93b9-bb5ccffcb9f3" class="bulleted-list"><li>NLP and Speech - $5B in @ a CAGR of 35%</li></ul><p id="e02f90c0-c8fb-4a07-9826-021cb118d8c4" class="">The applications best suited to this market are typically related to data types where current deep learning models already perform extraordinarily well (e.g., image and text datasets). Amit is willing to pay high six-figure ACV contracts. Amit is leading a mature data science team that has an enterprise R&amp;D budget, where ~10% of that budget is applied to labeling data. </p><h3 id="3214f83d-fa38-43e5-a3c1-d5879daa244e" class=""><strong>What problem are we solving for him?</strong></h3><p id="39b72828-c5cf-48e8-b534-2625e18b823a" class="">For the “Amits” of the world, the success KPI is minimizing generalization error of a machine learning model on a test set, so that Amit can use that model in his business.</p><p id="bbe7228f-b3b1-478a-b7f1-57f30b7f8526" class="">Having high quality, varied, data at scale is the biggest blocker for his team. He tends to prefer a human only labeling approach, but is okay with AI assisted labeling, pre-labels, and active learning (although has some doubts whether active learning really works). </p><p id="e50798fa-2fd0-4cbd-a3c7-dfc7c1094a0b" class="">He needs really high quality data. He needs it to be 100% pixel perfect, because they will use it to train their machine learning model which will be 80-90% in production. He is happy that the system can handle edge cases very well, because edge cases are important in their application.</p><p id="175c8684-9caa-4727-88da-09580d7d19b8" class="">They are moving so fast and have so much pressure on them to deliver, coupled with the fact that they have either venture funding or a big budget (from the internal company), that time is precious.   They need a good price relative to the market, but there is not a clear economic value tied to labeling.</p><p id="fae8827d-4142-4afb-8c36-9758fba68e03" class="">It should be very fast to get started, with minimal integration via an API or SDK that they can hook to their existing pipeline.</p><p id="00d70240-fc5e-47d7-b715-e9e113e99efd" class="">They have so much data, they can&#x27;t handle it all internally, so the solution needs to be able to handle big data coming in batches. But at the same time they need a gaurantee that they can get hundreds of thousand data points labeled every month- gauranteed, with very high quality. They need to get data back at a very high velocity &lt; 5 business days with &gt; 99% accuracy.</p><p id="1b00bc87-09a3-4bd2-8b86-089d0084ed89" class="">He has 5 or 6 different labeling pipelines, which different priorities. He needs a way to review the data to make sure it&#x27;s high quality. He needs data programs specific to his need (e.g. 3D semantic segmentation)</p><p id="7f22a499-7ad0-4e33-a154-1991679c1aad" class="">He needs a way to quickly, and easily modify the product including the instructions, giving feedback to the crowd, changing the task, marking data as correct or incorrect, etc. He wants a debugging tool that he can try himself and ask the super.AI crowd for feedback.</p><p id="7eddee15-6a36-4fea-9b61-4d5e08547762" class="">It needs to be very easy (API or click of the button) to integrate into his own data review flow, data processing flow, so that he can label whenever he wants. He wants humane labeling because image is important for them.</p><p id="18375470-14f3-4070-888a-dbb904bce975" class="">He love having access to training data domain experts, which allowed them to receive timely and effective advice throughout their initial integration and beyond.</p><h3 id="a2ca498e-5909-46b4-abcd-18fd8865d58b" class=""><strong>What benefits are we bringing him?</strong></h3><p id="a3c4726e-bcf6-464c-baaf-5d88f5ee6421" class="">Amit and his team are advanced, they know what they are doing and want to get their hands dirty, iterate fast, understand the problem and customize the labeling to their exact needs. If they need to change something they don&#x27;t want to wait for a vendor to change it they want to change it themselves. <strong>We built the Data Program builder, for this precise reason. </strong></p><p id="ab730a46-e70e-4e51-87e8-bea63ea7a627" class="">They are happy that super.AI makes it easy to focus on developing leading AI technology rather than the operations of labeling data. It&#x27;s more interesting, but it also gives them more agility as a company.</p><p id="8f88f382-3bad-47fe-b6cd-aca6e5633bbb" class=""><strong>They have in-house labelers, and want to experiment with their models, the task design instructions, and really lock it down before outsourcing it to a less sophisticated crowd. With the </strong><strong><a href="http://super.AI">Super.AI</a></strong><strong> platform they can seamlessly do all of these things. </strong>They can design a custom data program from scratch with the Data Program Builder, then label with the self service Ai powered labeling tools, add their models to the system for active learning, pre-labeling, quality assurance, model training, and when the task is ready outsource to a large scalable crowd and get guaranteed accuracy. </p><p id="63a497fe-fdd9-4c08-868b-e97b04f37639" class="">Amit especially loves that he can quickly test out many different labeling sources. He&#x27;s happy that <a href="http://super.AI">super.AI</a> quickly finds the best labeling agents for him (whether it’s Super.AI&#x27;s, meta AI, generalist humans, specialized humans, or other labeling companies etc). With this approach, Amit always gets the best of what the market has to offer given his priorities (whether it’s quality/accuracy, cost, or speed).</p><p id="6b1d9678-f28a-4f48-aed6-a63b069d1011" class="">He is looking for very good customer service, that is happy that super.AI provides consistent top-notch support through a number of channels, including a direct Slack channels with engineers. They are happy that super.AI responds to requirements quickly, with a short conversation, roll out projects in a week, with minimal development time from them. They are happy that the super.AI QA team is careful and quick to seek clarification, and their attention to detail has produced some truly impressive results.</p><h3 id="fccaf75e-2ac0-428c-a57a-7db02f797eb0" class=""><strong>What delights him?</strong></h3><p id="6e257060-3a3a-43a1-94f0-f546b97ea7ee" class="">No longer does Amit have to spend his days doing</p><p id="65f2f359-bbd9-4dda-9996-f6beabf6bd47" class=""><em>undifferentiated heavy-lifting</em></p><p id="cd656673-cbac-4cc3-ad6a-5a67a0e59e8d" class="">writing instructions for labelers (the most time consuming piece), monitoring crowd quality, fixing low quality data, starting over every time the data needs to change. He can get started in a few hours, customize the project as little or as much as he likes. He can add data from an API, cloud storage, on-prem databases, a web dashboard, or anything that fits into his normal workflow. In addition he can add his own custom models to the platform, label data himself, outsource to labelers, monitor the quality, and link his data scientist and the crowd under a single platform. With the data engine no longer does Amit need to spend 100x more than he needs to train his model. And with the ability to use any labeling source, he no longer does he need to use conflicting formats to find the best offering. He can test the whole market in one place: Super.AI. He gets exactly what he wants, as though there was someone next to him helping with task instructions, feedback, and reviewing quality. He is excited by the quality guarantee, and delighted that he can precisely customize the performance of his data program to his distinct needs.</p><p id="be7556f5-9ecb-4af1-a48c-e38ef1efac5f" class="">Since his AI models now work so well in production on live customer, he looks like a hero and gets a promotion.</p><h2 id="f5fdbdf4-931f-4f52-bb69-3a9d90506253" class="">Details</h2><p id="671deaea-8874-49af-98f1-d51b55ba2b5f" class=""><strong>Titles:</strong> Machine Learning Lead, Research scientists, ML engineer, Data Engineer, CTO (for smaller companies), Product manager for applied science and machine learning, Head of Data Science / Cofounder, Director of AI, Applied ML Manager, Principal Engineer (oversees research team), Engineering Director, Engineering manager, AI lead</p><p id="cbc7bfce-8279-4314-9be9-0fcf0c42b2ee" class=""><strong># Employees:</strong> 10,000+</p><p id="2d8f75e8-8d5f-43f2-8fef-7bfa02b2ba1d" class=""><strong>Verticals:</strong> High-tech, Chatbot, Robotics, VR/AR</p><p id="40f2b99b-79cd-483d-86a5-0883a681f893" class=""><strong>Examples:</strong> LogMeIn, HP, Ebay, Advertima, Allstate</p><p id="764594eb-930a-428d-85cf-f6d22cfa6f0e" class=""><strong>Revenue:</strong> $10M-1B+</p><p id="a3ca67d8-7f9b-4cb1-aa29-68b7bfbbe07c" class=""><strong>Location:</strong> US, Europe</p><p id="85d0bd41-4e12-44de-aa0c-17bc5debe08b" class=""><strong>Pros: </strong></p><ul id="776db0d1-983e-49f2-b266-2c4205822071" class="bulleted-list"><li>Highly sophisticated buyer</li></ul><ul id="94266dfd-5265-4874-a90e-04f59e0c1626" class="bulleted-list"><li>Prefers self-service </li></ul><ul id="2384acc5-6503-4cda-aad1-52454df35059" class="bulleted-list"><li>Large budgets already allocated for labeling </li></ul><p id="be21d275-d84f-4767-a4b9-2ce911875a1f" class=""><strong>Cons:</strong></p><ul id="ab4b7736-5a62-435f-840e-9957d8f02e55" class="bulleted-list"><li>Competitive Market </li></ul><ul id="7e223bf4-87b4-4608-b925-0b6a5e9ab272" class="bulleted-list"><li>Lower probability of recurring revenue </li></ul><ul id="4761734d-f38b-4d6f-aa77-040e25dd2323" class="bulleted-list"><li>Preference against auto-labeling</li></ul><ul id="78f87ca5-037c-42c8-84b2-aaac8d3960e5" class="bulleted-list"><li>Not directly tied to end value </li></ul><p id="cd5044b5-da43-4951-b29f-19116ee520eb" class=""><strong>Desired Metrics:</strong></p><ul id="6e52b8ff-93df-4d8d-a83b-d0063b514cbf" class="bulleted-list"><li>&gt;90% accuracy on test set </li></ul><ul id="e4903c03-97db-4a7b-b9c3-c558194116cc" class="bulleted-list"><li>High data labeling velocity (1M points / business week)</li></ul><ul id="3829ef6f-f215-4c11-a132-029eb0843b25" class="bulleted-list"><li>Labeled data quality close to 100%</li></ul><ul id="8daeb076-87fe-49be-976d-107f6f6fed78" class="bulleted-list"><li>Deliver new feature &lt; 5 business days</li></ul><p id="49ebd263-8747-479f-b7db-f0e840d06c3f" class=""><strong>Current tools:</strong></p><ul id="14c98440-3a13-4674-9ead-60d3c0424ee0" class="bulleted-list"><li>They spend a lot of time on Slack, Email, and Google Apps</li></ul><ul id="df0908f0-d5ed-46ed-b5ee-ea323a283c61" class="bulleted-list"><li>Tensorfow, Pytorch, domino data lab, spark, </li></ul><ul id="80436278-a67b-4eb2-b1a7-680aa16ce1ec" class="bulleted-list"><li> JIRA</li></ul><p id="5895f432-3175-4aec-a71a-4f7d9ebf44ac" class=""><strong>Influencers and information sources:</strong></p><ul id="83b25593-756e-40b2-80d1-d30a92e7e56a" class="bulleted-list"><li>They read reddit machine learning, Hackernews watch machine learning videos on youtube, r and go to machine learning conferences to learn more about machine learning. </li></ul><ul id="3adb6370-f618-4fe1-a2d2-5a2f0c512285" class="bulleted-list"><li>They follow ML professors on twitter such as Yan Lecun, Geoff Hinton, and academic researchers who also work for big tech companies. They want to be like Deepmind, Google AI.</li></ul><ul id="f2a8cfd6-fe60-4481-a713-e62dd754a927" class="bulleted-list"><li>They read entrepreneur books like Zero to One, The lean startup, management books, they read textbooks on machine learning</li></ul><ul id="60390df9-33b0-43ef-8c73-f63dd2612c80" class="bulleted-list"><li>Product manager newsletters, forums, and conferences</li></ul><p id="b401a6c7-1aea-43b1-95bd-c868d64c450c" class=""><strong>What they are Angry at:</strong></p><ul id="24ce4b8e-469d-4952-9447-ed5077c560a6" class="bulleted-list"><li>Building a labelling infrastructure takes 2-3 months of valuable engineering time and is delaying labelling and hence product development. The tool that is built internally is more an MVP and lacks features; moreover, it does not get maintained and breaks. As a result, key objectives are being pushed back. Quality is poor and then model output is poor. This puts everything in jeopardy.</li></ul><ul id="5076d0a5-f1b3-41a0-9abc-92b0cddf5df9" class="bulleted-list"><li>They are angry that they are letting people down. They have really high expectations for themselves, high achievers. They were sold on the promise of AI themselves and are quite frustrated it&#x27;s not working like in the academic papers, blog posts, tutorials, promised. They don&#x27;t know what&#x27;s quite wrong, and how to fix it. There needs to be way more monitoring, testing, validation, and eliminate variables.</li></ul><p id="0c4134b8-4a5d-4cc1-aa50-280ae049cff5" class=""><strong>Suspicions:</strong></p><ul id="db47cbb5-655c-45b4-b4df-382d66dd4be3" class="bulleted-list"><li>They are suspicious of academic papers, results promised in conferences. They don&#x27;t trust &quot;salsey&quot; people, people who are twitchhy, they don&#x27;t trust charisma, they think most people don&#x27;t think deeply about things, and most people don&#x27;t really understand AI and are just on the bandwagon.</li></ul><ul id="2dbfd79f-5ef3-432a-a59a-d2c01b170156" class="bulleted-list"><li>They have data and privacy concerns over software as well. They are suspicious that software can actually help.</li></ul><p id="fe698428-4dbf-4333-b026-e29bdf1257ca" class=""><strong>Fears</strong></p><ul id="9ffd84ee-7f44-4f1f-8c87-2f08bc169275" class="bulleted-list"><li>They fear they will miss the chance to make an impact, that people think they are dumb, and that they aren&#x27;t honest. They let down the team after pitching such a big vision.</li></ul><ul id="1f79687f-815a-447e-ab44-17fddc4e1c82" class="bulleted-list"><li>They fear that they keep making incremental improvements but overall no real progress, and then everyone is frustrated.</li></ul><p id="132ef7ab-d1e7-4e7c-bd26-8bb88342d2b8" class=""><strong>What he already tried and failed at:</strong></p><ul id="7a6ef311-c92e-4f26-9128-13a878aaa6bc" class="bulleted-list"><li>They tried the latest models, they tried SaaS tools to use machine learning, they tried methods they saw in a paper and a blog article and it&#x27;s not working. They hired a team that is doing what he told them to do and nothing is working. He tried hyperparameter optimization, he tried covariate shift adaptation, he tried 4 different approaches and they are not working. He also tried getting more data but it&#x27;s difficult and expenseive so it&#x27;s hard to convince himself and the team to make the investment.</li></ul><ul id="c0f9ed6e-05c3-4086-ac24-54c433142c01" class="bulleted-list"><li>They have tried to build their internal tools, but they are not working. They have tried other externally developed software, but integration and training takes too long. they cannot use external services for data privacy reasons.</li></ul><p id="59b8e802-3bb5-4613-817b-a41e39336fae" class=""><strong>What will happen if he doesn&#x27;t make the change:</strong></p><ul id="2a8dbba4-45d3-4508-b60c-218170932e2e" class="bulleted-list"><li>If they don&#x27;t make a change people in the organization will get tired, and fed up of investing so much time and money into the promise of machine learning. If they don&#x27;t change this then they will grow out of favor in the company, lose trust, lose funding for this project, and get made to work on aother product. Customers will lose faith in the product, and the things that were promised.</li></ul><ul id="66a94803-b12c-4f23-aba6-2d23ba78cc24" class="bulleted-list"><li>Poor labelling quality leads to poor model performance, putting everything jeopardy.</li></ul><p id="163fe303-d5d4-47c4-add4-580934b34441" class=""><strong>He hates:</strong></p><ul id="5de6a215-f198-42db-8a37-bbf099361e81" class="bulleted-list"><li>They hate fake people who pretent to know AI, people who don&#x27;t think logically, incompetent people, and status quo.</li></ul><p id="16b4c544-4cf2-49e9-b5b7-f2b0b8e64c32" class=""><strong>Trends in this market:</strong></p><ul id="20cc4302-2605-437e-93c3-f9e7224cf3b8" class="bulleted-list"><li>AI is in the media all the time. ML professors are getting massive paychecks to join big companies. The biggest tech companies are betting their companies on AI. Valuations are soarching through the roof if you use AI. There is so many free tools, data, tutorials, academic papers, resources. People are running toward jobs in AI and it makes people look smart.</li></ul><ul id="ebfb0716-0d5f-4265-8a02-56eb95530fb9" class="bulleted-list"><li>They need to apply for business reasons, and delaying because of poor tools poses a business risk.</li></ul><p id="bdcae9dd-c409-4f8e-897a-78ab15c44376" class="">
+</p><h1 id="c864f8b3-391f-41ab-b7b6-2b0b49905af3" class="">Persona 2 - “Callum the Operations/Product Leader”</h1><p id="b61e7fdf-0b65-4401-93e5-4ceec1cb1ca1" class="">There are 2 sub-types of Callum&#x27;s who both share a single core value proposition: </p><ol id="1b4a2527-2cba-4641-b8d0-c021f574ef6b" class="numbered-list" start="1"><li>The <strong>Product Manager</strong> who wants to scale his product quickly. He needs to launch but operations does not keep pace with development, and he often risks launch because the data they need does not arrive quick enough, or does not have the quality they need. He misses launch and run into business risks. He is risk adverse, because if things don&#x27;t work it falls on them..</li></ol><ol id="e7602bf1-a210-4853-b8e2-cf189bf41246" class="numbered-list" start="2"><li>The <strong>Operational Manager</strong> that needs to automate his repetitive tasks and processes, so he can reduce costs, increase employee satisfaction and keep pace with the competition. </li></ol><p id="3a2a6b20-e73d-4715-8acd-364aa105340c" class="">
+</p><p id="16ad2ba0-abc1-46e4-b11b-318b8a789046" class="">He has access to lots of (potential) data and money, and while he has access to a strong software engineering team he has little or no access to strong ML talent and infrastructure. <strong>He often hears things around his organization such as &quot;We want to do something with AI&quot;, &quot;Maybe we can automate this with AI,&quot; but a large knowledge gap exists internally, preventing him from making this a reality.</strong> <strong>Things also tend to change so slowly in his organization, he needs external help to change. </strong></p><p id="bbbd05e7-1f7f-4c17-84e1-e70497baa16b" class="">
+</p><p id="833d1dd7-d0ba-41b8-b6e9-2e3a8e67e176" class="">He prefers a simple solution that just works and meets his metrics. He doesn&#x27;t want to have to change too many things or learn something new. He wants to talk about his business problem and get and API that meets his quality, cost, and speed SLAs. </p><p id="5371b7ef-e77c-4015-a474-e730059ecd94" class="">
+He has access to a software team who setup a digital pipeline, but it is humans doing the mundane work of processing unstructured data. Some of the pipeline is actually automated with software, but still mostly done by humans. They built this pipeline because it&#x27;s solving a clear pain point, they know how much it costs them to run this pipeline, they know the current quality, cost, and latency. 
+
+HIs predecessor initially setup this human pipeline when the line-of-business was smaller, but now that it&#x27;s scaling quickly it&#x27;s hard to scale this pipeline, both from a time, money, and complexity perspective. They would love to outsource this for the right price, and assuming it&#x27;s quality enough.
+
+They have realized that they can automate the pipeline with AI or software, and actually have on their roadmap, but it always get&#x27;s pushed off, because there&#x27;s always something more important for the data science team, or software team to work on. </p><h3 id="6086bb03-8264-4f60-8334-da87204c1dcd" class="">Market Size </h3><p id="deb5df1c-f931-4031-b0fc-1ee60fb3f169" class="">Callum represents a huge market opportunity for super.AI. The market size for Super.AI represented by this “buyer” is $42B growing at a CAGR of 51%. The reason we can address this market is because of the horizontal nature of the platform and how quickly we can onboard new customers in a self-service manner using only sales people. </p><h3 id="7c86ccb1-a453-4b9f-a576-268cd6cb7fab" class=""><strong>What problem are we solving for him?</strong></h3><p id="9d4ba8ff-d5cd-45f5-84e8-3e24ee19dc32" class="">Callum is currently using humans to solve mundane tasks on unstructured data (image, text, videos, etc.). These are things such as checking the quality of products, transcribing things, structuring data, etc. They are reaching a point where they can no longer scale to reach customer demand, there are too many errors, and the process is too slow and expensive.  </p><p id="e4b596dc-a2d8-4bfa-97cc-654249a21149" class="">Callum wants to use AI to improve his application but doesn’t know where to start. He needs help converting the problem into a machine learning problem: he needs help customizing the program, adding feedback, assessing whether the quality is good or not, and making sure it’s performing well in production. He wants it to be simple to use, and wants the module to have API integrations that he can combine with the rest of her pipeline. </p><p id="b5d923ff-f3bb-495c-b06a-fc02412eda98" class="">He needs a solution that easy to adapt to the current process, because they have built up the current process and optimized it to work for the business. They don&#x27;t want to change too much at first, because they know their instructions, monitoring, qualifying, training, work, but would be open to optimizations over time as they gain faith the elastic outsource solution works.</p><p id="8d055e8d-5b91-4541-80b5-e2e94604e233" class="">In the short term it should be at a price point that&#x27;s very close (best is cheaper) than current cost it takes to operate the pipeline. It also needs to have the same or better quality than the current pipeline.</p><p id="03554493-5ecf-4698-ae5a-c5ef6fb20c97" class="">They need to be able to audit the pipeline, modify, and  trigger alerts if something is off. They want to make sure it&#x27;s high quality, fast, and at a reasonable price.</p><p id="e4deabae-0965-49c6-a1e3-cafdb751613b" class="">They need fast turn around times, and to handle lots of data, but they would like to use it as little or as much as they want.</p><p id="05800e3f-721c-40a7-8dad-ccb6df4724f6" class="">The best would be if it&#x27;s automated by AI, while keeping the same quality, because this would be significatly faster, and cheaper.</p><p id="a57a4b75-4591-4836-b2e1-8bf980737b2c" class="">They want it to be at least as good at the current pipeline, and if there is no current pipeline, they need it to be good enough for the end-product to work properly. In the case where there is no pipeliene they don&#x27;t know exactly what quality they need but will choose something intuitively (e.g. 80-90% accuracy).</p><p id="2730258a-7925-4685-95a4-c393d0e11faf" class="">They need a trusted partner, one that meets their standards on confidentiality, privacy, data security, as some of the data is confidential or proprietary.</p><h3 id="e788f3e6-28c6-4c0f-938a-33f49cf68120" class=""><strong>What benefits are we bringing him?</strong></h3><p id="9626d17d-3ca9-49db-a7c7-5965fa711348" class="">Just like Stripe made an API to handle payments, Twilio made a API for SMS communication, Callum can access the combined power of Humans + AI with a simple API and dashboard that fits into his existing workflows. He can interact and manipulate it just like any software he uses day-to-day, but behind the scenes he&#x27;s running and training very advanced AI. </p><p id="d4615728-819e-4111-bdf1-4889c3685de3" class="">He gets the power of AI without the need to handle the complexity. Thus, he doesn’t need to go through the arduous process of structuring data, labeling data, training models, productionalizing models, and monitoring models in production. </p><p id="3384b711-cd9d-43c5-bf43-efea9e06155b" class="">He can achieve “state of the art” with a click of a button, and the request gets sent to our crowd of data scientists, while at the same time getting the same quality guarantees, customization, feedback, collaborators, meta AI, and quality assessment mechanism as Amit.</p><h3 id="ef3d1898-16fd-4c11-ac3d-326f13c80f9d" class=""><strong>What delights him?</strong></h3><p id="d92df49b-e7d4-4fbb-b797-d685a3434a4d" class="">Callum can now bring AI to the challenges he is solving in her organization, but does not have to spend years learning how to do it. He doesn’t need to leave him comfort zone (i.e., strong abstractions of software), but is empowered with access to relevant AI to innovate/improve the product(s) he owns.</p><h2 id="9939156d-5260-43b7-97ef-3bc796efcda3" class="">Details</h2><p id="cc777c89-ce62-4b8b-8d04-8294f41bb976" class=""><strong>Titles:</strong> VP of technical operations, Product manager, Project manager.</p><p id="e326baea-81df-40ca-8d39-3baf7f343aad" class=""><strong># Employees:</strong> 10,000+</p><p id="60c55f55-3b14-4e6a-8116-a20435b575fc" class=""><strong>Verticals:</strong> E-commerce, inspection, finance, insurance.</p><p id="17518b1a-4608-4fe2-b617-1ffe350dc713" class=""><strong>Examples:</strong> Target, BVNA, Clearfind, Triputra, </p><p id="8dddfb51-4d6e-4825-9aea-8795d62c69d8" class=""><strong>Revenue:</strong> $100M-1B+</p><p id="350ab8a9-c8fe-4acd-9fd0-4c5ae94291c1" class=""><strong>Location:</strong> US, Europe</p><p id="12939474-6105-4fb6-867d-a7a5a1b1739c" class=""><strong>Pros: </strong></p><ul id="770bd1a2-977c-4f22-8be9-0a2a9c308c96" class="bulleted-list"><li>Deals structured as recurring revenue </li></ul><ul id="4b853c83-a854-4028-9694-79fa4ba051ab" class="bulleted-list"><li>Not a competitive space (compared to Amit)</li></ul><ul id="21895552-7d06-4ef0-9cca-12e4b3b16341" class="bulleted-list"><li>Directly tied to customer deliveries (top and bottom line) </li></ul><ul id="2bc18b00-c1c0-4f32-9f48-41e678ee403a" class="bulleted-list"><li>Can estimate the value (value pricing)</li></ul><ul id="9d2d7b36-88fe-4b43-8e28-4fa54c7c9371" class="bulleted-list"><li>Existing process to compare as a baseline</li></ul><p id="0dc3c3a8-3fb0-4ef7-9349-cebc75300f91" class=""><strong>Cons:</strong></p><ul id="eee70110-2817-4b8a-b4b9-0955acab1965" class="bulleted-list"><li>Requires Education </li></ul><ul id="1ebf51b3-ee4e-4d4b-90ce-c72fb1737995" class="bulleted-list"><li>Long Sales Cycle </li></ul><ul id="c63b43ff-1c7d-4001-93b1-287428cde5f3" class="bulleted-list"><li>Hard to Target (not as easy as Amit)</li></ul><p id="38bb026b-b668-4aa3-a82d-1725147a6ce3" class=""><strong>Desired Metrics:</strong></p><ul id="94b0269b-95c9-4487-9af8-3a9fcdf5bae5" class="bulleted-list"><li>quality = current pipeline quality (80%-100% accuracy)</li></ul><ul id="3c8241ae-9708-4214-8d85-c9cf13fb2731" class="bulleted-list"><li>cost &lt;= current pipeline cost (~$.15/data) / 30% of FTE cost that is replaced by automation</li></ul><ul id="3b0a4f59-a956-41c3-972f-1f4106461ab9" class="bulleted-list"><li>latency &lt;= current pipeline latency (~1000/hr)</li></ul><ul id="646c7ac0-46c1-4ecc-bd32-d0704f8652df" class="bulleted-list"><li>Optimized at least 50% with AI (50% cost reduction)</li></ul><ul id="c35a67f1-2f4f-4f14-b079-cff9a283a68d" class="bulleted-list"><li>Can scale 50% current scale elastically within 2 weeks</li></ul><ul id="e36d870a-12dd-4a67-a97a-ffce7921354b" class="bulleted-list"><li>Can integrate &lt;1-4 weeks with .5 FTE</li></ul><p id="673a2917-4351-4972-be27-e683f362f780" class=""><strong>Influencers and information sources:</strong></p><ul id="b8215b91-0180-46f5-9a3f-18375d32e54c" class="bulleted-list"><li>Consultancies</li></ul><ul id="5960ef35-e6fc-4e91-839a-e86bfa3632b5" class="bulleted-list"><li>Peers</li></ul><ul id="df38ac42-6d67-46f0-b145-d78bb6111710" class="bulleted-list"><li>Management</li></ul><ul id="8a05965f-9c41-4c05-a370-44e80d860989" class="bulleted-list"><li>Industry and Lobbying groups.</li></ul><ul id="831f886c-1c6f-487f-a518-ec80c9670ba4" class="bulleted-list"><li>Conferences</li></ul><p id="ee5fc570-072f-49d0-ba0f-9fc37a692a37" class=""><strong>Current tools:</strong></p><ul id="681b0ca5-6139-4526-ae14-52099ba97e31" class="bulleted-list"><li>Internally build tools, word, excel, google sheets</li></ul><ul id="899d5ec4-0719-4f25-bec9-5e38c5442f4d" class="bulleted-list"><li>Kissflow, automation anywhere,</li></ul><ul id="3cdb1ea3-1e70-43cd-ac30-425e53a39e14" class="bulleted-list"><li>Accounting, finance software</li></ul><ul id="cbe202e5-3169-4bba-a9e8-337485fccc1f" class="bulleted-list"><li>BPOs</li></ul><p id="b539eb0b-438b-4e9a-8d95-035ef0a61d11" class=""><strong>Suspicions:</strong></p><ul id="efffe498-6ce2-4c40-8a65-5dd6210fddbd" class="bulleted-list"><li>He is suspicious whether “AI” can really deliver on the expected results</li></ul><ul id="d54dba3a-934e-4ef3-a7f4-a0ce1299bf91" class="bulleted-list"><li>He is suspicious of actually needing more time to implement than the time savings that will occur - i.e. “Is it worth it?”</li></ul><p id="a221be0f-44a0-4151-aca6-1b44f3fc3d79" class=""><strong>Fears</strong></p><ul id="2592b26c-0cce-486e-bd7f-24b6701a00d2" class="bulleted-list"><li>He fears that trying another company will not deliver the results he had hoped for, thus taking away one of their few chances to make an impact and having a detrimental effect on their own career.</li></ul><p id="d09c541f-4730-4f2e-8955-d472d7d4742e" class=""><strong>What he already tried and failed at:</strong></p><ul id="eb7840fa-9776-476d-b744-866bdf4fdb4c" class="bulleted-list"><li>He tried to change processes, hire different people or train them differently, but the impact was incremental at best.</li></ul><ul id="53b31fe5-3267-44f8-ae7c-0e29e2b3e824" class="bulleted-list"><li>He tried different software solutions, but it requires re-training and resetting of existing processes and is too much of an undertaking.</li></ul><ul id="97976082-9fc8-4cf1-b677-bdcce5255250" class="bulleted-list"><li>They tried to outsource the process but quality + speed were nowhere near what they need. There were always issues with vendor communication, quality, feedback etc.</li></ul><p id="0cd7a93f-62aa-4e68-992f-b4575f3618a5" class=""><strong>What will happen if he doesn&#x27;t make the change:</strong></p><ul id="a4b3a99d-ac5b-4c72-8256-eca9fb3e2bbe" class="bulleted-list"><li>As the workload grows, dissatisfaction of employees will grow alongside it.</li></ul><ul id="530c9d79-7a2d-4e00-b510-d9d66538b2cd" class="bulleted-list"><li>Costs will increase as economies of scale are limited.</li></ul><ul id="4660c10e-b081-400c-886f-04bdd36a25a9" class="bulleted-list"><li>Increased costs renders their product or service too expensive to compete, as rival - companies adopt ML</li></ul><ul id="02571a98-aa36-4c9e-a913-4de8df8198d9" class="bulleted-list"><li>Company growth is blocked by manual work</li></ul><p id="4dcb37e4-3691-4a96-81d8-a2b1424d77f3" class=""><strong>He hates:</strong></p><ul id="fddd4963-fa13-40b8-b517-66f7e9dbe302" class="bulleted-list"><li>People that don’t understand their business/product but claim they do</li></ul><ul id="3ca233c6-a201-4286-97d9-8732fced2ca3" class="bulleted-list"><li>Low quality</li></ul><p id="749d9ec1-5b17-4e36-af20-7b673fe9ff35" class=""><strong>Trends in this market:</strong></p><ul id="476d632a-3820-4005-9a25-1f10e7177ca6" class="bulleted-list"><li>Process automation and machine learning will lower costs. They will be outcompeted if they don’t run their own projects.</li></ul><ul id="f96ead3f-d52e-4a4e-9920-88c34ac2b738" class="bulleted-list"><li>AI will disrupt any industry, it may disrupt yours.</li></ul><p id="0f744f81-0212-4d5b-8213-8940609f5af6" class="">
+</p><h1 id="9f3c01c4-c923-464e-9fd1-ef5c79ac5195" class="">Nuances of the Markets</h1><h2 id="3db82a08-2c67-468d-92a4-3b711bd5884c" class="">Self Service Tools vs Outsourced Labeling Markets</h2><p id="2a809d6c-49ce-4aea-b0dc-3f24feff7e6d" class="">There is an important distinction between self-service labeling tools and outsourced labeling. If someone just said &quot;labeling&quot; it could be easy to miss this distinction. Larger more mature data science teams will have in-house labelers, and the biggest tech companies have even built infrastructure to handle the labeling (Microsoft→HRS, Google→Endor, Facebook→SRT, etc.). Even though they have these tools they can&#x27;t keep up with the scale at which they need labeling. For the more advanced and mature data science teams like Ebay and HP they take full advantage of things like the data program builder, the self-service labeling tools, the customization features, and the Meta AI infrastructure before sending out to an outsourced crowd. Before us this would take a lot of time, because they would have to convert the project from their internal tools to the external vendors tool, and they would lose control, and if they wanted to change anything it would be a pain. But with <a href="http://super.AI">super.AI</a> you get this on in a single platform. For example, we designed the Meta AI infrastructure to make hooking in their own models (or open source model), designing labeling workflows, and making sure data is high quality very easy. We view the actual models as the commoditized part that the FAANG collectively invests $2B+/year in developing. They would outsource the labeling and hookup their models to assist, but not outsource the model building part. Our value proposition for them is creating a single platform that connects the data scientist, with the AI models, and the labelers in a single place.</p><p id="26c8030e-8322-46bf-8d12-38cec1ee8777" class="">The Callum market on the other hand prefers to use the platform as an API integration. They like to treat it as a black box where they can send their data into and like magic get the data out. They want the data to be high quality, given to them fast enough, at a reasonable price and at the end of the day it&#x27;s less important how they get it, and if humans or AI labels the data. </p><h2 id="12b859e1-e44c-4e52-9e78-41d1dfa4b158" class="">Uses of AI for these Markets </h2><p id="9ff82607-d01e-4da7-9910-00ec59e0403c" class="">We want to take a moment and decouple &quot;AI for data labeling.&quot; The problem with a new field is that something the jargon is not well defined. I think it&#x27;s natural to bunch this concept into a single bucket, whereas there are different concepts that compose &quot;AI powered labeling&quot;. There are a number of things related to AI powered labeling and so if someone claims they are doing this, or don&#x27;t want it they may be referencing one of these, it&#x27;s unlikely they are referencing everything here.</p><p id="2c758999-b1b1-4150-a35f-2e7c7094ebff" class="">There is first what we all <strong>auto labeling, </strong>this is where there is no human is involved (it&#x27;s only sent to the AI). The Callum demographic prefers auto labeling (assuming the quality is good). Amit on the other hand has a preference against auto labeling. But AI in the <a href="http://super.AI">super.AI</a> platform goes well beyond just auto labeling </p><p id="c3543b10-b439-4cfc-8ff4-8f95eb5281ce" class="">There is <strong>pre-labeling. </strong>This is where the human is still labeling the data, but the AI sends suggestions to the labeler before they start labeling. The makes the labeling process much faster because the AI only adds predictions where it is highly certain, and the human can focus on the most difficult pieces. Amit can add his own models to the pre-labeling process and just use the <a href="http://super.AI">super.AI</a> infrastructure to speed up his internal and external labeling. Callum will use our models for pre-labeling. </p><p id="495a378b-9ecd-4fa5-83de-94f261268a9b" class="">Next there is <strong>AI assisted labeling. </strong>This is where the AI makes predictions in real time given input from the user. The user can correct or modify the labels and the AI will automatically update the annotations in real time. For example instead of having to segment and entire car you can just draw a box around it and the AI will segment it in real time and you can adjust it as well in real-time. These tools still use humans but save a significant amount of time.</p><p id="824e642f-806a-42c0-bc11-5ce428264888" class="">There is A<strong>ctive Learning. </strong>Active learning selects the data points which would benefit the model most. The benefit of active learning is that you can train your model faster with less data. </p><p id="64a0c09b-87b9-453d-b1fc-26955e0e678b" class="">Next comes <strong>Data Boosting</strong>. Data boosting is similar to active learning in that its goal is to train a machine learning model faster, but it&#x27;s focused on finding edge cases by finding similar data to data the model got incorrect and &quot;boosting&quot; the amount of data of that class. </p><p id="54db663d-a1d0-429f-bb43-e387faa8487a" class="">There are S<strong>urrogate Models</strong>. Surrogate models are used for debugging labeling tasks. They are generic machine learning classification models with 1000&#x27;s of classes that find a correlation in tasks that were incorrect and the classes the model produced. For example maybe one of the output classes of the model is &quot;blurry image,&quot; and it just so happened that 87% of the incorrect data points the surrogate model predicted &quot;blurry image&quot;, and 10% of the correct points it predicted &quot;blurry image.&quot; This may be a good indication that a problem is with &quot;blurry images.&quot;</p><p id="22fae17b-e64e-48c9-9c02-f5081fc4d7df" class="">Finally there is <strong>AI Powered QA. </strong>This is where instead of the human checking the accuracy of the model, the model checks the accuracy of the human. Every ML model has an expected distribution of answers, when the human&#x27;s prediction is too different it will throw a flag. </p><p id="f7736360-ac68-430b-924a-b35bf44eacd7" class="">Tesla for example uses most of these techniques for labeling their self-driving car data, but it&#x27;s hard-coded to their exact application. We make this generic, programmable, and modular so that anyone can use it. </p><h2 id="f42249ba-abc3-4d16-983f-fb9ad3fc120b" class="">A Time Bound Market Difference</h2><p id="8c0a0d0c-3177-4694-8107-2d99da8f8863" class="">We believe eventually just like nearly every company not has software developers, in the next 5-10 years nearly every company will have data scientists and as a result in-house labeling teams, and a dedicated budget to &quot;data processing.&quot; And so the distinction between the extremely advanced Amit&#x27;s and less advanced Callum&#x27;s will amalgamate into a very similar market, just like is the case with software development. </p><p id="93d6e43f-c212-44ac-844f-9045b55c20e4" class="">Even the least advanced &quot;old-school&quot; companies have developers. Programming is not very old and data science is moving even faster, there&#x27;s an explosion of data scientists and data. It&#x27;s going to be a new standard that beyond software developers you will have data scientists. At that point in time everything he said about &quot;doing in house&quot; will be true, they will use use the DP builder, labeling tools, meta AI, and then outsource to the crowd for the scale.</p><h2 id="f4ff0545-0402-445b-b889-266c646c3b34" class="">Comparison to Data Robot like Solutions</h2><p id="2d76b10c-89af-44b6-abaa-d6280b6c76d8" class="">It&#x27;s clear Amit wouldn&#x27;t use a DataRobot like solution, but why wouldn&#x27;t a Callum use it instead of super.Ai? The short answer is that it serves a very different problem than Super.AI. The Data Robots, Dataiku, H2O, Google AutoML, etc. of the world  don&#x27;t exist to replace humans doing BPO like tasks on unstructured data but to replace open-source software. They are in-fact not good enough to replace humans in BPO-like tasks. These solutions excel in structured data tasks typically in cases where global insights are needed, such as in fraud detection, recommendation engines, detecting trends, and regressions. Human&#x27;s aren&#x27;t very good at these tasks anyways. <a href="http://super.ai/">Super.AI</a>, works well on tasks that humans are good at - local tasks on unstructured data, that&#x27;s quick complex. This is precisely the cases where these other approaches fall short.</p><p id="490a18f2-0bd3-4858-a5a4-09511d5f3d7e" class="">
+</p></div></article></body></html>
